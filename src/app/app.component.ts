@@ -31,7 +31,7 @@ export class AppComponent {
       lat: this.dots.map(d => d.lat),
       lon: this.dots.map(d => d.long),
       text: this.dots.map(d => d.qrtext),
-      marker: {size: 14}
+      marker: {size: 14, color: "rgba(10,10,250,.5)"}
     }];
 
     let layout = {
@@ -42,7 +42,15 @@ export class AppComponent {
         l: 20, //left margin
         r: 20, //right margin
         b: 20 //bottom margin
-      }
+      },
+	  mapbox: {
+		style: "light",
+		bearing:0,
+		center: {
+			lat:40,
+			lon:99
+		}
+	  }
     };
 
     Plotly.setPlotConfig({
